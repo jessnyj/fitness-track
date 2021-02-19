@@ -1,6 +1,7 @@
 const router = require("express").Router();
 // const Transaction = require("../models/workout.js");
 
+// Create Workout
 router.post("/api/workouts", ({body}, res) => {
     Workout.create(body)
     .then(dbWorkout => {
