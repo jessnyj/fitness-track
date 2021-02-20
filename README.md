@@ -43,9 +43,23 @@ This application allows a user to track their daily workouts. They can log multi
 For this application, I developed the html routes in order to render the different html pages. I created a workout model in order to store the exercise information within the database. I also constructed the api routes to allow for functionality within the site. 
 
 ## Code Snippet
-* 
+* This particular code snippet demonstrates how a user can update the workout model.
 ```
-
+router.put("/api/workouts/:id", (req, res) => {
+    Workout.findByIdAndUpdate(
+        { _id: req.params.id },
+        { $push: { exercises: req.body } },
+        { new: true, upsert: true },
+        console.log(req.params.id)
+    ).then(dbWorkout => {
+        console.log(dbWorkout);
+        res.json(dbWorkout);
+    })
+        .catch(err => {
+            res.status(400).json(err);
+        });
+    res.json(req.params.id);
+});
 ```
 
 ## License
