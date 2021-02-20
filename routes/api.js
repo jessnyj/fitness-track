@@ -26,11 +26,9 @@ router.get("/api/workouts", (req, res) => {
 });
 
 router.put("api/workouts/:id", (req, res) => {
-    Workout.findOne({
-        where: {
-            id: req.params.id
-        }
-    }).then(dbWorkout => {
+    Workout.findByIdAndUpdate(
+        {id: req.params.id},
+    ).then(dbWorkout => {
         console.log(dbWorkout);
         res.json(dbWorkout);
     })
