@@ -24,10 +24,12 @@
 ![Site](public/images/fitness-tracker.gif)
 
 ## Technologies Used
+* Mongoose
 * javascript
 * CSS
 * HTML
 * Express
+* Morgan
 * NodeJs
 * Robo3T
 * Atlas
@@ -35,11 +37,10 @@
 * Github
 
 ## Description
-
-
+This application allows a user to track their daily workouts. They can log multiple exercises on a specific day, track the name, type, sets, reps, and duration of exercise, and track distance traveled if they did a cardio workout.
 
 ## Work Involved
-
+For this application, I developed the html routes in order to render the different html pages. I created a workout model in order to store the exercise information within the database. I also constructed the api routes to allow for functionality within the site. 
 
 ## Code Snippet
 * 
