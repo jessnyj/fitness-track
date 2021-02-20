@@ -8,7 +8,6 @@
 * [Site Picture](#site-gif)
 * [Technologies Used](#technologies-used)
 * [Description](#description)
-* [Usage](#usage)
 * [Work Involved](#work-involved)
 * [Code Snippet](#code-snippet)
 * [License](#license)
@@ -49,7 +48,7 @@ router.put("/api/workouts/:id", (req, res) => {
     Workout.findByIdAndUpdate(
         { _id: req.params.id },
         { $push: { exercises: req.body } },
-        { new: true, upsert: true },
+        { new: true, runValidators: true },
         console.log(req.params.id)
     ).then(dbWorkout => {
         console.log(dbWorkout);
