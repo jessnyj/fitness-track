@@ -21,7 +21,7 @@
 [Deployed Link](https://fitness-track29.herokuapp.com/)
 
 ## Site Gif
-![Site]()
+![Site](public/images/fitness-tracker.gif)
 
 ## Technologies Used
 * javascript
