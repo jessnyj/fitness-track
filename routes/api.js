@@ -16,7 +16,7 @@ router.get("/api/workouts", (req, res) => {
     Workout.aggregate([
         {
             $addFields: {
-                totalWorkoutDuration: { $sum: "$exercises.duration" }
+                totalDuration: { $sum: "$exercises.duration" }
             }
         }
     ])
@@ -30,17 +30,17 @@ router.get("/api/workouts", (req, res) => {
 
 router.put("/api/workouts/:id", (req, res) => {
     Workout.findByIdAndUpdate(
-        {_id: req.params.id},
-        {$push: {exercises: req.body} },
-        {new: true, upsert: true},
+        { _id: req.params.id },
+        { $push: { exercises: req.body } },
+        { new: true, upsert: true },
         console.log(req.params.id)
     ).then(dbWorkout => {
         console.log(dbWorkout);
         res.json(dbWorkout);
     })
-    .catch(err => {
-        res.status(400).json(err);
-    });
+        .catch(err => {
+            res.status(400).json(err);
+        });
     res.json(req.params.id);
 });
 
