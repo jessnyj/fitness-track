@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const logger = require("morgan");
 
-// const db = require("./models");
+const db = require("./models/workout.js");
 
 const PORT = process.env.PORT || 3000;
 
@@ -14,7 +14,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fitness", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fitness-track29", {
     useNewUrlParser: true,
     useFindAndModify: false
 });
