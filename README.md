@@ -18,7 +18,7 @@
 
 ## Deployed Link
 * Click this link to view the site.
-[Deployed Link]()
+[Deployed Link](https://fitness-track29.herokuapp.com/)
 
 ## Site Gif
 ![Site]()
